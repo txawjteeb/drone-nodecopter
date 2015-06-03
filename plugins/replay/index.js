@@ -10,7 +10,7 @@ var config, client,video, navReader, vidReader, rawVideo, lastFrame;
 var BinaryReader = reader.BinaryReader;
 
 var NAV_INTERVAL = 1000/15; // Navdata sent 15/s in demo mode
-var VIDEO_INTERVAL = 1000/30; // 30 fps
+var VIDEO_INTERVAL = 1000/24; // 30 fps
 
 function replay(name, deps) {
     config = deps.config;

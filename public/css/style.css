@@ -1,3 +1,24 @@
+body {
+    margin: auto;
+    font-family: Optima
+}
+
+h1 {
+    vertical-align: top;
+}
+
+form, input {
+    display: inline-block;
+    width: 80px;
+}
+
+table {
+    vertical-align: top;
+    display: inline-block;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
 .header-container {
      position: absolute;
      top: 0;
@@ -9,33 +30,22 @@
      padding: 5px 10px;
 }
 
-.header-container .brand {
-     font-family: Audiowide, Arial
-}
-
-.main-container {
-    position: absolute;
-    top: 30px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-}
-
 #controls {
     float: right;
 }
 
-#glasspane {
-        position: absolute;
-        left: 0px;
-        right: 0px;
-        top: 0px;
-        bottom: 0px;
-        z-index: 100;
+#keyboard-controls {
+    text-align: center;
+    width: 800px;
+    margin: 0 auto;
+}
 
-    -webkit-user-select: none; // webkit (safari, chrome) browsers
-    -moz-user-select: none; // mozilla browsers
-    -khtml-user-select: none; // webkit (konqueror) browsers
+#button-controls {
+    height: 130px;
+    width: 400px;
+    text-align: center;
+    margin-top: 10px;
+    margin: 0 auto;
 }
 
 #cockpit {

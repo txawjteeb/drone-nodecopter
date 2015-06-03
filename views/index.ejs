@@ -1,12 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width">
-    <title><%= title %></title>
-    <link rel="stylesheet" href="/css/fonts.css">
+    <title>David Lee's AR DRONE</title>
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/jquery.notifyBar.css">
     <% for(var i=0; i<styles.length; i++) {%>
     <link rel="stylesheet" href="<%= styles[i] %>"><% } %>
   </head>
@@ -25,9 +21,10 @@
   <body>
     <div class="header-container">
       <span id="controls">
+        <span class="brand">CODING DOJO MEAN STACK</span>
       </span>
       <header class="wrapper clearfix">
-        <span class="brand">WebFlight</span>
+        <span class="brand" style="display: block">DAVID LEE'S AR DRONE NODEJS PROJECT</span>
       </header>
     </div>
     <div class="main-container">
@@ -45,5 +42,97 @@
     <script>
       var cockpit = new Cockpit();
     </script>
+    <div id="keyboard-controls">
+      <h1>Keyboard Controls</h1>
+      <h4>Make sure to click on "FLAT TRIM" on top right before takeoff</h4>
+      <h5>*The Parrot AR Drone 2.0 will not run FLIP functions if battery is lower than 30%</h5>
+      <br>
+      <br>
+      <table>
+        <thead>
+          <th>Action</th>
+          <th>Key</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>FORWARD</td>
+            <td>W</td>
+          </tr>
+          <tr>
+            <td>BACKWARD</td>
+            <td>S</td>
+          </tr>
+          <tr>
+            <td>RIGHT</td>
+            <td>D</td>
+          </tr>
+          <tr>
+            <td>LEFT</td>
+            <td>A</td>
+          </tr>
+          <tr>
+            <td>ASCEND</td>
+            <td>&#8593;</td>
+          </tr>
+          <tr>
+            <td>DESCEND</td>
+            <td>&#8595;</td>
+          </tr>
+          <tr>
+            <td>CLOCKWISE TURN</td>
+            <td>&#8594;</td>
+          </tr>
+          <tr>
+            <td>COUNTERCLOCKWISE TURN</td>
+            <td>&#8592;</td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <thead>
+          <th>Action</th>
+          <th>Key</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>TAKEOFF</td>
+            <td>T</td>
+          </tr>
+          <tr>
+            <td>LAND</td>
+            <td>L</td>
+          </tr>
+          <tr>
+            <td>FLIP</td>
+            <td>F</td>
+          </tr>
+          <tr>
+            <td>CHANGE CAMERA</td>
+            <td>C</td>
+          </tr>
+          <tr>
+            <td>DISABLE EMERGENCY MODE</td>
+            <td>E</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br>
+    <hr style="width: 900px">
+    <div id="button-controls">
+      <h1>Button Controls</h1>
+      <form action="/takeoff" method="post">
+        <input type="submit" value='Take Off'>
+      </form>
+      <form action="/land" method="post">
+        <input type="submit" value='Land'>
+      </form>
+      <form action="/flip" method="post">
+        <input type="submit" value='Flip'>
+      </form>
+      <form action="/flight" method="post">
+        <input type="submit" value='Flight Path'>
+      </form>
+    </div>
   </body>
 </html>

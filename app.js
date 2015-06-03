@@ -6,6 +6,7 @@ var express = require('express')
   , io = require('socket.io').listen(server)
   , arDrone = require('ar-drone')
   , arDroneConstants = require('ar-drone/lib/constants')
+var client  = arDrone.createClient();
   ;
 
 // Fetch configuration
@@ -52,6 +53,64 @@ app.get('/', function (req, res) {
         }
     });
 });
+
+app.post('/takeoff', function(req, res){
+  console.log("AR DRONE taking off");
+  client.takeoff();
+  client.after(3000, function(){
+    client.stop();
+  })
+})
+
+app.post('/flip', function(req, res){
+  console.log('trying to flipLeft')
+  client.animate('flipLeft', 3);
+  client.after(3000, function(){
+    client.stop();
+  })
+})
+
+app.post('/land', function(req, res){
+  console.log("AR DRONE landing");
+  client.stop();
+  client.land();
+})
+
+app.post('/flight', function(req, res){
+  console.log("AR DRONE running it's flight path");
+  client.takeoff();
+  client.after(1000, function(){
+    console.log("AR DRONE stop");
+    client.stop();
+  })
+  client.after(1000, function(){
+    console.log("AR DRONE yawDance");
+    client.animate('yawDance', 10);
+  })
+  client.after(3000, function(){
+    console.log("AR DRONE stop");
+    client.stop();
+    console.log("AR DRONE up");
+    client.up(1);
+    console.log("AR DRONE turn clockwise");
+    client.clockwise(1);
+  })
+  client.after(3000, function(){
+    console.log("AR DRONE stop");
+    client.stop();
+    console.log("AR DRONE down");
+    client.down(1);
+    console.log("AR DRONE turn counterClockwise");
+    client.counterClockwise(1);
+  })
+  client.after(3000, function(){
+    console.log("AR DRONE stop");
+    client.stop();
+    console.log("AR DRONE land");
+    client.land();
+  })
+})
+
 
 function navdata_option_mask(c) {
   return 1 << c;

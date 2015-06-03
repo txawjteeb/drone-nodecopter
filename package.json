@@ -26,16 +26,4 @@
     "line-reader": "~0.2.3",
     "buffered-reader": "~1.0.1"
   },
-  "author": "Laurent Eschenauer <laurent@eschenauer.be>",
-  "contributors": [
-    {
-      "name": "Benjamin Nortier",
-      "email": "bjnortier@gmail.com"
-    },
-    {
-      "name": "Bernhard K. Weisshuhn",
-      "email": "bkw@codingforce.com>"
-    }
-  ],
-  "license": "MIT"
 }

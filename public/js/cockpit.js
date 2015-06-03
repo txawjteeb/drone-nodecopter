@@ -1,6 +1,7 @@
 (function(window, document, $, undefined) {
         
     var hostname = document.location.hostname ? document.location.hostname : "localhost";
+    console.log('hostname', hostname);
 
     var Cockpit = function Cockpit() {
         this.socket = io.connect('http://' + hostname);
